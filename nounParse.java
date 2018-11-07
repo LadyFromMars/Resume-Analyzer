@@ -27,18 +27,28 @@ public static String[] add(String[] originalArray, String newItem)
 }
 
 
-
 // MAIN
 
 public static void main (String[] args) {
 
+
     //input
+
+
     String library = keyWordsAPI.library1;
 
-    String resume = " ShouldBe Shouldnot script java python mockito scrum junit framework teamplayer team lider! Code efficient role family degree business, unit test snowboarding family ";
+    Scanner input = new Scanner(System.in);
 
-    String job = "java script Perl linux unix quality, optimizing testing scrum regression bugs resolution results phase framework exploratory blabla";
 
+    // Prompt the user to enter a resume
+    System.out.print("Enter your resume ");
+    String resume = input.nextLine();
+
+
+
+
+    System.out.print("Enter job description ");
+    String job = input.nextLine();
 
 
 
@@ -79,7 +89,8 @@ public static void main (String[] args) {
 
       // Modifying job description(input) + matches(same)
 
-      String[] equals = job.replace("!","").replace(",","").replace("/","").replace("?","").replace(".","").toLowerCase().split(" ");
+      String[] equals = job.replace("!","").replace(",","").replace("/","")
+      .replace("?","").replace(".","").toLowerCase().split(" ");
 
       String[] result2 = {" "};
 
@@ -119,8 +130,8 @@ public static void main (String[] args) {
 
   // Matches btwn Job Description (result2) and resume (result)
 
-  String[] twins = result;
-  String[] jobTwin = result2;
+  String[] twins = result2;
+  String[] jobTwin = result;
   List<String> resultList = Arrays.asList(jobTwin);
 
 
@@ -159,7 +170,59 @@ public static void main (String[] args) {
     for (String element:missed) {
     System.out.println( element );
     }
+    System.out.println(" ");
+
+
+
+
+    //  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    double jobKeyWords = result2.length -1;
+    double matchKeyWords = total.length -2;
+
+    System.out.println(jobKeyWords);
+    System.out.println(matchKeyWords);
+
+    double percentMatch = matchKeyWords / jobKeyWords * 100;
+    System.out.println(percentMatch);
+    System.out.println("Your resume matches job description on " + (int)percentMatch + "%");
+
+
+
+
+
+
+    // OVERUSED WORDS
+
+
+
+        //String s1 = "crazy escape  great great gather hate prior repair rough sad scratch sick strike employ external hurt illegal laugh lay";
+    /*    String s2 = "unix linux crazy escape java skills great good ubuntu crazy hate escape crazy escape";
+          String s1 = resume;
+
+        String[] dupls = s1.replace("!","").replace(",","").replace("/","").replace("?","").replace(".","").replace(":","").toLowerCase().split(" ");
+
+
+
+        String[] resultNew = {" "};
+
+        String[] s3 = s2.split(" ");
+
+        List<String> s4 = Arrays.asList(s3);
+
+
+
+        for (String dupl : dupls) {
+          if(Collections.frequency(s4, dupl)>1){
+            System.out.println(dupl + " occurs " +
+             Collections.frequency(s4, dupl) + " times");
+           }
+            //add matches to results
+
+      } */
+
 
 }
+
 
 }
