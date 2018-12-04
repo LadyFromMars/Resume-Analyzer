@@ -24,6 +24,8 @@ import org.jfree.util.Rotation;
 
 
 public class nounParseTest {
+    
+    static String basedOnFinal1 = " ";
 
     //  adds new element to an Array
 public static String[] add(String[] originalArray, String newItem)
@@ -331,7 +333,7 @@ double percentMatch = matchKeyWords / jobKeyWords * 100;
           "achieve, establish, increase/decrease, influence, negotiate, resolve, launch, manage, provide, improve, coordinate, assist, execute, engage. \n";
           //System.out.println(ovSwitchFinal);
 
-          String noOVWords = "No overused words found. Way to go!";
+         
 
           
           
@@ -409,24 +411,24 @@ double percentMatch = matchKeyWords / jobKeyWords * 100;
     
           for (String resOp : resOps) {
 
-            if(Collections.frequency(marketingListS, resOp)>=1){
-             basedOn = add(basedOn, resOp + " (marketing)");
+            if(Collections.frequency(marketingListS, resOp)>=1 && resOp != null){
+             basedOn = add(basedOn, resOp + " (marketing), ");
              nMarketing++;
            }
              else if(Collections.frequency(techListS, resOp)>=1){
-              basedOn = add(basedOn, resOp + " (IT)");
+              basedOn = add(basedOn, resOp + " (IT), ");
               nTech++;
             }  else if(Collections.frequency(teatcherListS, resOp)>=1){
-             basedOn = add(basedOn, resOp + " (education)");
+             basedOn = add(basedOn, resOp + " (education), ");
              nTeacher++;
            } else if(Collections.frequency(medListS, resOp)>=1){
-              basedOn = add(basedOn, resOp + " (medicine)");
+              basedOn = add(basedOn, resOp + " (medicine), ");
               nMed++; 
            } else if(Collections.frequency(scienceListS, resOp)>=1){
-              basedOn = add(basedOn, resOp + " (science)");
+              basedOn = add(basedOn, resOp + " (science), ");
               nScience++; 
           } else if(Collections.frequency(archListS, resOp)>=1){
-              basedOn = add(basedOn, resOp + " (architecture)");
+              basedOn = add(basedOn, resOp + " (architecture), ");
               nArch++; }
 
 }
@@ -456,13 +458,13 @@ double percentMatch = matchKeyWords / jobKeyWords * 100;
         int medShare = (int)((nMed/all)*100);
         int scienceShare = (int)((nScience/all)*100);
         int archShare = (int)((nArch/all)*100);
-        int other = 100 - ((int)markShare + (int)techShare + (int)eduShare +(int)medShare + (int)scienceShare + (int)archShare);
+        int other = 100 - (markShare + techShare + eduShare +medShare + scienceShare + archShare);
 
-        System.out.println("Marketing: " + (int)markShare + " %");
-        System.out.println("IT: " + (int)techShare + " %");
-        System.out.println("education: " + (int)eduShare + " %");
-        System.out.println("Science: " + (int)scienceShare + " %");
-        System.out.println("architecture: " + (int)archShare + " %");
+        System.out.println("Marketing: " + markShare + " %");
+        System.out.println("IT: " + techShare + " %");
+        System.out.println("education: " + eduShare + " %");
+        System.out.println("Science: " + scienceShare + " %");
+        System.out.println("architecture: " + archShare + " %");
         System.out.println("other: " + other + " %");
     
         
@@ -522,20 +524,43 @@ double percentMatch = matchKeyWords / jobKeyWords * 100;
       chart.setBackgroundPaint(Color.WHITE);
       chart.setBorderVisible(false); 
       
+      
     
       
 //setting a PIE CHART value
 
       frame102.PiePanel.add(chartPanel, BorderLayout.CENTER);
       
-     
+
       
+      
+      
+// Job field - BASED ON WORDS
+
+StringBuilder sb7 = new StringBuilder();
+          for (String s : basedOn)
+          {
+          sb7.append(s);
+          }
+          String basedOnFinal = sb7.toString().replace("  "," ").replace("   "," ");
+          
+         
+           basedOnFinal1 = basedOnFinal;
+   
     
-return total;
+return basedOn;
+
+
+
 
  }
  
+  public static String pushTheButton(){
  
+     FieldBased.BasedOnWords.setText(basedOnFinal1);
+     
+     return basedOnFinal1;
+ }
 
 
 // MAIN

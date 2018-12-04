@@ -66,6 +66,7 @@ public class frame102 extends javax.swing.JFrame {
         WordsThatMatch = new javax.swing.JLabel();
         MissedWordsResume = new javax.swing.JLabel();
         OverusedWords = new javax.swing.JLabel();
+        BasedOnButton = new javax.swing.JButton();
         backgroundPick = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -130,7 +131,6 @@ public class frame102 extends javax.swing.JFrame {
         PerMatch.setRows(2);
         PerMatch.setToolTipText("");
         PerMatch.setWrapStyleWord(true);
-        PerMatch.setBounds(new java.awt.Rectangle(20, 20, 20, 20));
         PerMatch.setMargin(new java.awt.Insets(10, 50, 10, 30));
         PerMatch.setSelectionColor(new java.awt.Color(0, 153, 153));
         PerMatch.addCaretListener(new javax.swing.event.CaretListener() {
@@ -154,7 +154,7 @@ public class frame102 extends javax.swing.JFrame {
         PiePanel.setMaximumSize(new java.awt.Dimension(150, 150));
         PiePanel.setPreferredSize(new java.awt.Dimension(100, 100));
         PiePanel.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(PiePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 280, 320));
+        getContentPane().add(PiePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 280, 300));
 
         MatchedWords.setEditable(false);
         MatchedWords.setColumns(51);
@@ -217,6 +217,14 @@ public class frame102 extends javax.swing.JFrame {
         OverusedWords.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         OverusedWords.setText("Overused words");
         getContentPane().add(OverusedWords, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 190, 20));
+
+        BasedOnButton.setText("based on words");
+        BasedOnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BasedOnButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BasedOnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 280, 20));
 
         backgroundPick.setIcon(new javax.swing.ImageIcon("/Users/natallia/Desktop/resulazer/img/tarquoise2.jpg")); // NOI18N
         backgroundPick.setText("jLabel1");
@@ -334,6 +342,15 @@ public class frame102 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_pasteActionPerformed
 
+    private void BasedOnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BasedOnButtonActionPerformed
+        
+        FieldBased BasedOnPage = new FieldBased();
+        nounParseTest.pushTheButton();
+        BasedOnPage.setVisible(true);
+        
+        
+    }//GEN-LAST:event_BasedOnButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -375,6 +392,7 @@ public class frame102 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BasedOnButton;
     private javax.swing.JMenuItem JMenuItem3;
     public static javax.swing.JTextArea MatchedWords;
     private javax.swing.JLabel MissedWordsResume;
