@@ -57,6 +57,7 @@ public class frame102 extends javax.swing.JFrame {
         PerMatch = new javax.swing.JTextArea();
         ProgressBar = new javax.swing.JProgressBar();
         PiePanel = new javax.swing.JPanel();
+        BasedOnButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         MatchedWords = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -66,7 +67,6 @@ public class frame102 extends javax.swing.JFrame {
         WordsThatMatch = new javax.swing.JLabel();
         MissedWordsResume = new javax.swing.JLabel();
         OverusedWords = new javax.swing.JLabel();
-        BasedOnButton = new javax.swing.JButton();
         backgroundPick = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -122,7 +122,7 @@ public class frame102 extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, -1));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 1020, 60));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, 1020, 60));
 
         PerMatch.setEditable(false);
         PerMatch.setColumns(15);
@@ -154,7 +154,18 @@ public class frame102 extends javax.swing.JFrame {
         PiePanel.setMaximumSize(new java.awt.Dimension(150, 150));
         PiePanel.setPreferredSize(new java.awt.Dimension(100, 100));
         PiePanel.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(PiePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 280, 300));
+
+        BasedOnButton.setText("based on words");
+        BasedOnButton.setOpaque(true);
+        BasedOnButton.setRequestFocusEnabled(false);
+        BasedOnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BasedOnButtonActionPerformed(evt);
+            }
+        });
+        PiePanel.add(BasedOnButton, java.awt.BorderLayout.PAGE_END);
+
+        getContentPane().add(PiePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 280, 340));
 
         MatchedWords.setEditable(false);
         MatchedWords.setColumns(51);
@@ -189,7 +200,7 @@ public class frame102 extends javax.swing.JFrame {
         overusedWords.setSize(new java.awt.Dimension(500, 150));
         jScrollPane4.setViewportView(overusedWords);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 680, 160));
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 680, 160));
 
         mismatchedWords.setEditable(false);
         mismatchedWords.setColumns(51);
@@ -203,7 +214,7 @@ public class frame102 extends javax.swing.JFrame {
         mismatchedWords.setSize(new java.awt.Dimension(500, 150));
         jScrollPane3.setViewportView(mismatchedWords);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 680, 130));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 680, 150));
 
         WordsThatMatch.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         WordsThatMatch.setText("Matching words");
@@ -216,15 +227,7 @@ public class frame102 extends javax.swing.JFrame {
 
         OverusedWords.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         OverusedWords.setText("Overused words");
-        getContentPane().add(OverusedWords, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 190, 20));
-
-        BasedOnButton.setText("based on words");
-        BasedOnButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BasedOnButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BasedOnButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 280, 20));
+        getContentPane().add(OverusedWords, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 190, 20));
 
         backgroundPick.setIcon(new javax.swing.ImageIcon("/Users/natallia/Desktop/resulazer/img/tarquoise2.jpg")); // NOI18N
         backgroundPick.setText("jLabel1");
@@ -288,6 +291,9 @@ public class frame102 extends javax.swing.JFrame {
         this.dispose();
         frame1 page1 = new frame1();
         page1.setVisible(true);
+        
+        nounParseTest.saveResumeInp();
+        nounParseTest.saveJD();
         
         
     }//GEN-LAST:event_newSearchButtonActionPerformed
@@ -392,7 +398,7 @@ public class frame102 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BasedOnButton;
+    public static javax.swing.JButton BasedOnButton;
     private javax.swing.JMenuItem JMenuItem3;
     public static javax.swing.JTextArea MatchedWords;
     private javax.swing.JLabel MissedWordsResume;
@@ -416,7 +422,7 @@ public class frame102 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     public static javax.swing.JTextArea mismatchedWords;
-    private javax.swing.JButton newSearchButton;
+    public javax.swing.JButton newSearchButton;
     public static javax.swing.JTextArea overusedWords;
     private javax.swing.JMenu paste;
     // End of variables declaration//GEN-END:variables

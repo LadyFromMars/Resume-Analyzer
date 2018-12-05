@@ -1,6 +1,7 @@
 
 
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.io.*;
@@ -412,23 +413,23 @@ double percentMatch = matchKeyWords / jobKeyWords * 100;
           for (String resOp : resOps) {
 
             if(Collections.frequency(marketingListS, resOp)>=1 && resOp != null){
-             basedOn = add(basedOn, resOp + " (marketing), ");
+             basedOn = add(basedOn, resOp + " (marketing),  ");
              nMarketing++;
            }
              else if(Collections.frequency(techListS, resOp)>=1){
-              basedOn = add(basedOn, resOp + " (IT), ");
+              basedOn = add(basedOn, resOp + " (IT),  ");
               nTech++;
             }  else if(Collections.frequency(teatcherListS, resOp)>=1){
-             basedOn = add(basedOn, resOp + " (education), ");
+             basedOn = add(basedOn, resOp + " (education),  ");
              nTeacher++;
            } else if(Collections.frequency(medListS, resOp)>=1){
-              basedOn = add(basedOn, resOp + " (medicine), ");
+              basedOn = add(basedOn, resOp + " (medicine),  ");
               nMed++; 
            } else if(Collections.frequency(scienceListS, resOp)>=1){
-              basedOn = add(basedOn, resOp + " (science), ");
+              basedOn = add(basedOn, resOp + " (science),  ");
               nScience++; 
           } else if(Collections.frequency(archListS, resOp)>=1){
-              basedOn = add(basedOn, resOp + " (architecture), ");
+              basedOn = add(basedOn, resOp + " (architecture),  ");
               nArch++; }
 
 }
@@ -562,17 +563,81 @@ return basedOn;
      return basedOnFinal1;
  }
 
+  
+  
+  
+  
+  
+ // Save resume (checkbox)
+  
+  public static void saveResumeInp(){
+      
+      String resImpSaved = frame1.saveResumeInput;
+      String resEmpty = " ";
+      
+
+//save chechbox state
+      
+      int boxState = frame1.saveBox;
+      if (boxState%2 == 0){
+         frame1.saveResume.setSelected(true); 
+          
+      } else {
+         frame1.saveResume.setSelected(false); 
+      }
+
+//String resImpSaved = resume;
+        
+        if(frame1.saveResume.isSelected()){
+            
+            frame1.TextFieldResume.setText(resImpSaved);
+        } else {
+            frame1.TextFieldResume.setText(resEmpty);
+        }
+        
+  }
+  
+  
+  
+  
+  
+  // save Job Description (checkbox)
+  
+   public static void saveJD(){
+      
+      String JDSaved = frame1.saveJDInput;
+      String jobEmpty = " ";
+      
+
+//save chechbox state
+      
+      int boxJDState = frame1.saveJDBox;
+      if (boxJDState%2 == 0){
+         frame1.SaveJobDes.setSelected(true); 
+          
+      } else {
+         frame1.SaveJobDes.setSelected(false); 
+      }
+
+//String resImpSaved = resume;
+        
+        if(frame1.SaveJobDes.isSelected()){
+            
+            frame1.TextFieldJob.setText(JDSaved);
+        } else {
+            frame1.TextFieldJob.setText(jobEmpty);
+        }
+      
+        
+  }
+  
+  
 
 // MAIN
 
 public static void main (String[] args) {
 
-
   GO();
   
-
-
-}
-
-
+    }
 }

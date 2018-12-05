@@ -55,6 +55,8 @@ public class frame1 extends javax.swing.JFrame {
         TextFieldJob = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        saveResume = new javax.swing.JCheckBox();
+        SaveJobDes = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -132,7 +134,7 @@ public class frame1 extends javax.swing.JFrame {
         });
         jPanel2.add(go);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 1020, 60));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, 1020, 60));
 
         TextFieldResume.setColumns(20);
         TextFieldResume.setLineWrap(true);
@@ -142,7 +144,7 @@ public class frame1 extends javax.swing.JFrame {
         TextFieldResume.setSize(new java.awt.Dimension(400, 800));
         jScrollPane1.setViewportView(TextFieldResume);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 480, 480));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 480, 490));
 
         TextFieldJob.setColumns(20);
         TextFieldJob.setLineWrap(true);
@@ -150,7 +152,7 @@ public class frame1 extends javax.swing.JFrame {
         jScrollPane2.setViewportView(TextFieldJob);
         TextFieldJob.getAccessibleContext().setAccessibleParent(TextFieldJob);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 480, 480));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 480, 490));
 
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel2.setText("Insert your resume");
@@ -159,6 +161,24 @@ public class frame1 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel4.setText("Insert job description");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 210, 30));
+
+        saveResume.setSelected(true);
+        saveResume.setText("Remember resume");
+        saveResume.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveResumeMouseClicked(evt);
+            }
+        });
+        getContentPane().add(saveResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, -1, -1));
+
+        SaveJobDes.setSelected(true);
+        SaveJobDes.setText("Remember job description");
+        SaveJobDes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveJD(evt);
+            }
+        });
+        getContentPane().add(SaveJobDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/Users/natallia/Desktop/resulazer/img/tarquoise1.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 690));
@@ -233,6 +253,10 @@ public class frame1 extends javax.swing.JFrame {
        //run the method
        
          nounParseTest.GO();
+         
+       //saving the resume
+         saveResumeInput = TextFieldResume.getText();
+         saveJDInput = TextFieldJob.getText();
        
         
         
@@ -285,6 +309,35 @@ public class frame1 extends javax.swing.JFrame {
     
     
     
+    //Checkbox: remember resume
+    
+    
+    static String saveResumeInput = "";
+    public static int saveBox = 0;
+            
+ 
+    private void saveResumeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveResumeMouseClicked
+        // Counter to enable/disable checkbox "resume":
+        saveBox++;
+        
+    }//GEN-LAST:event_saveResumeMouseClicked
+
+    
+    //Checkbox: remember job description
+    
+    
+    static String saveJDInput = "";
+    public static int saveJDBox = 0;
+    
+    private void saveJD(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveJD
+        // Counter to enable/disable checkbox "job descripton":
+        saveJDBox++;
+        
+    }//GEN-LAST:event_saveJD
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -323,8 +376,9 @@ public class frame1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMenuItem3;
-    private javax.swing.JTextArea TextFieldJob;
-    private javax.swing.JTextArea TextFieldResume;
+    public static javax.swing.JCheckBox SaveJobDes;
+    public static javax.swing.JTextArea TextFieldJob;
+    public static javax.swing.JTextArea TextFieldResume;
     private javax.swing.JButton go;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -340,5 +394,6 @@ public class frame1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JMenu paste;
+    public static javax.swing.JCheckBox saveResume;
     // End of variables declaration//GEN-END:variables
 }
