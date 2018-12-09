@@ -30,7 +30,7 @@ public class FieldBased extends javax.swing.JFrame {
         BasedOnWords = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Pie Chart data source");
+        setTitle("Pie Chart keywords");
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(51, 51, 51));
         setLocationByPlatform(true);
@@ -43,7 +43,6 @@ public class FieldBased extends javax.swing.JFrame {
         BasedOnWords.setLineWrap(true);
         BasedOnWords.setRows(5);
         BasedOnWords.setWrapStyleWord(true);
-        BasedOnWords.setBounds(new java.awt.Rectangle(5, 5, 240, 80));
         jScrollPane1.setViewportView(BasedOnWords);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

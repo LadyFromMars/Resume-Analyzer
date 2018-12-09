@@ -13,8 +13,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javafx.scene.input.Clipboard;
 import javafx.scene.paint.Color;
+import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+import javax.swing.KeyStroke;
+import javax.swing.text.DefaultEditorKit;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -23,6 +26,10 @@ import org.jfree.chart.plot.PiePlot3D;
 import org.jfree.data.general.DefaultPieDataset;
 
 public class frame1 extends javax.swing.JFrame {
+    
+    
+    
+  
 
     static String resumeInput = " ";
     static String jobInput = " ";
@@ -60,10 +67,13 @@ public class frame1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
         paste = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         JMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Resume Analyzer");
@@ -121,7 +131,7 @@ public class frame1 extends javax.swing.JFrame {
 
         go.setBackground(new java.awt.Color(0, 102, 102));
         go.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        go.setText("Go");
+        go.setText("Submit");
         go.setAlignmentY(1.0F);
         go.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         go.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -149,6 +159,7 @@ public class frame1 extends javax.swing.JFrame {
         TextFieldJob.setColumns(20);
         TextFieldJob.setLineWrap(true);
         TextFieldJob.setRows(50);
+        TextFieldJob.setFocusTraversalPolicyProvider(true);
         jScrollPane2.setViewportView(TextFieldJob);
         TextFieldJob.getAccessibleContext().setAccessibleParent(TextFieldJob);
 
@@ -178,12 +189,16 @@ public class frame1 extends javax.swing.JFrame {
                 saveJD(evt);
             }
         });
-        getContentPane().add(SaveJobDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, -1, -1));
+        getContentPane().add(SaveJobDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 600, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/Users/natallia/Desktop/resulazer/img/tarquoise1.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 690));
 
         jMenu1.setText("File");
+
+        jMenuItem5.setText("About ");
+        jMenu1.add(jMenuItem5);
+
         jMenuBar1.add(jMenu1);
 
         paste.setText("Edit");
@@ -219,6 +234,22 @@ public class frame1 extends javax.swing.JFrame {
             }
         });
         paste.add(JMenuItem3);
+
+        jMenuItem3.setText(" Paste \"resume\"");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        paste.add(jMenuItem3);
+
+        jMenuItem4.setText(" Paste \"job description\"");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        paste.add(jMenuItem4);
 
         jMenuBar1.add(paste);
 
@@ -286,14 +317,15 @@ public class frame1 extends javax.swing.JFrame {
        
         // paste text:
         
-       TextFieldResume.paste();
-       TextFieldJob.paste();
+         TextFieldResume.paste();
+         TextFieldJob.paste();
+        
+       //TextFieldResume.paste();
+       //TextFieldJob.paste();
        
     }//GEN-LAST:event_JMenuItem3ActionPerformed
 
     private void pasteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteActionPerformed
-        
-      
         
     }//GEN-LAST:event_pasteActionPerformed
 
@@ -313,7 +345,7 @@ public class frame1 extends javax.swing.JFrame {
     
     
     static String saveResumeInput = "";
-    public static int saveBox = 0;
+    public static int saveBox = 2;
             
  
     private void saveResumeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveResumeMouseClicked
@@ -327,13 +359,29 @@ public class frame1 extends javax.swing.JFrame {
     
     
     static String saveJDInput = "";
-    public static int saveJDBox = 0;
+    public static int saveJDBox = 2;
     
     private void saveJD(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveJD
         // Counter to enable/disable checkbox "job descripton":
         saveJDBox++;
         
     }//GEN-LAST:event_saveJD
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // paste job description:
+        
+        TextFieldJob.paste();
+        
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        //paste resume
+        
+        TextFieldResume.paste();
+        
+
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     
     
@@ -389,6 +437,9 @@ public class frame1 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

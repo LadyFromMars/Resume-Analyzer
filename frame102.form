@@ -142,9 +142,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Grande" size="18" style="0"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/natallia/Desktop/search1-black.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="New search"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -293,7 +290,8 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="BasedOnButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="based on words"/>
+            <Property name="text" type="java.lang.String" value="based on keywords"/>
+            <Property name="actionCommand" type="java.lang.String" value="based on keywords"/>
             <Property name="opaque" type="boolean" value="true"/>
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
@@ -420,7 +418,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Grande" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Matching words"/>
+        <Property name="text" type="java.lang.String" value="Matching keywords"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Constraints>
@@ -434,7 +432,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="STIXIntegralsUp" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Words you should add to your resume"/>
+        <Property name="text" type="java.lang.String" value="Keywords you should add to your resume"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -447,7 +445,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Grande" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Overused words"/>
+        <Property name="text" type="java.lang.String" value="Suggestions"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

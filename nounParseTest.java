@@ -318,7 +318,7 @@ double percentMatch = matchKeyWords / jobKeyWords * 100;
           sb3.append(s);
           }
           String ovResultFinal = sb3.toString().replace("  "," ").replace("   "," ");
-          String ovResultFinal1 =  ovResultFinal + "\n" + "Those words are not good enough for your resume. Try switch them on some of those:\n" +
+          String ovResultFinal1 =  ovResultFinal + "\n" + "Suggestions:\n" +
           "advanced, expert, groundbreaking, robust, superior, phenomenal, strong, outstanding, proficient, deep passion for.\n";
           //System.out.println(ovResultFinal);
 
@@ -330,7 +330,7 @@ double percentMatch = matchKeyWords / jobKeyWords * 100;
           }
 
           String ovSwitchFinal = sb4.toString().replace("  "," ").replace("   "," ");
-          String ovSwitchFinal1 =ovSwitchFinal + "\n" + "Using the same verb over and over again doesn't look good on your resume. You can diversify it with verbs like: \n" +
+          String ovSwitchFinal1 =ovSwitchFinal + "\n" + "Suggestions: \n" +
           "achieve, establish, increase/decrease, influence, negotiate, resolve, launch, manage, provide, improve, coordinate, assist, execute, engage. \n";
           //System.out.println(ovSwitchFinal);
 
@@ -434,18 +434,18 @@ double percentMatch = matchKeyWords / jobKeyWords * 100;
 
 }
 
-            System.out.println(nMarketing);
-            System.out.println(nTech);
-            System.out.println(nTeacher);
-            System.out.println(nMed);
-            System.out.println(nScience);
-            System.out.println(nArch);
+           // System.out.println(nMarketing);
+           // System.out.println(nTech);
+            //System.out.println(nTeacher);
+            //System.out.println(nMed);
+            //System.out.println(nScience);
+            //System.out.println(nArch);
             
             
 
-            for (String element:basedOn) {
+           /* for (String element:basedOn) {
                 System.out.println( element );
-            }
+            } */
 
 
 // conculating shares in fields
@@ -595,6 +595,9 @@ return basedOn;
             frame1.TextFieldResume.setText(resEmpty);
         }
         
+        System.out.println(" !!!! Res " + boxState);
+        
+        
   }
   
   
@@ -628,7 +631,7 @@ return basedOn;
             frame1.TextFieldJob.setText(jobEmpty);
         }
       
-        
+        System.out.println(" !!!! JD " + boxJDState);
   }
   
   

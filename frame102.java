@@ -92,7 +92,6 @@ public class frame102 extends javax.swing.JFrame {
 
         newSearchButton.setBackground(new java.awt.Color(51, 51, 51));
         newSearchButton.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
-        newSearchButton.setIcon(new javax.swing.ImageIcon("/Users/natallia/Desktop/search1-black.png")); // NOI18N
         newSearchButton.setText("New search");
         newSearchButton.setToolTipText("");
         newSearchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -155,7 +154,8 @@ public class frame102 extends javax.swing.JFrame {
         PiePanel.setPreferredSize(new java.awt.Dimension(100, 100));
         PiePanel.setLayout(new java.awt.BorderLayout());
 
-        BasedOnButton.setText("based on words");
+        BasedOnButton.setText("based on keywords");
+        BasedOnButton.setActionCommand("based on keywords");
         BasedOnButton.setOpaque(true);
         BasedOnButton.setRequestFocusEnabled(false);
         BasedOnButton.addActionListener(new java.awt.event.ActionListener() {
@@ -217,16 +217,16 @@ public class frame102 extends javax.swing.JFrame {
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 680, 150));
 
         WordsThatMatch.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        WordsThatMatch.setText("Matching words");
+        WordsThatMatch.setText("Matching keywords");
         WordsThatMatch.setToolTipText("");
         getContentPane().add(WordsThatMatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 280, 20));
 
         MissedWordsResume.setFont(new java.awt.Font("STIXIntegralsUp", 1, 18)); // NOI18N
-        MissedWordsResume.setText("Words you should add to your resume");
+        MissedWordsResume.setText("Keywords you should add to your resume");
         getContentPane().add(MissedWordsResume, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, 20));
 
         OverusedWords.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        OverusedWords.setText("Overused words");
+        OverusedWords.setText("Suggestions");
         getContentPane().add(OverusedWords, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, 190, 20));
 
         backgroundPick.setIcon(new javax.swing.ImageIcon("/Users/natallia/Desktop/resulazer/img/tarquoise2.jpg")); // NOI18N
