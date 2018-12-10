@@ -1,6 +1,6 @@
 # Resume-Analyzer
 Application simulates behavior of Applicant Tracking Systems (ATS), which is used by majority of companies,
-and help to do job search more eficient.
+and help to do job search more efficient.
 
 
 To run this application, download "RA build" folder and access it through terminal:
